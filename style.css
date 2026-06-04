@@ -360,6 +360,125 @@ h3 {
   margin-bottom: 18px;
 }
 
+/* BLOG */
+
+.seccion-blog {
+  background: var(--fondo);
+}
+
+.cabecera-blog {
+  align-items: end;
+  display: flex;
+  gap: 30px;
+  justify-content: space-between;
+}
+
+.cabecera-blog .encabezado-seccion > p:last-child,
+.contenido-entrada p,
+.detalle-entrada {
+  color: var(--texto-secundario);
+}
+
+.filtros-blog {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.filtro-blog {
+  background: transparent;
+  border: 1px solid var(--linea);
+  border-radius: 999px;
+  color: var(--texto-principal);
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.88rem;
+  font-weight: 800;
+  padding: 8px 16px;
+}
+
+.filtro-blog:hover,
+.filtro-blog.activo {
+  background: var(--color-marca);
+  border-color: var(--color-marca);
+  color: #fff;
+}
+
+.rejilla-blog {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 42px;
+}
+
+.entrada-blog {
+  background: var(--superficie);
+  border: 1px solid var(--linea);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.entrada-blog:hover {
+  box-shadow: var(--sombra);
+  transform: translateY(-4px);
+}
+
+.imagen-entrada {
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  width: 100%;
+}
+
+.contenido-entrada {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 24px;
+}
+
+.metadatos-entrada {
+  align-items: center;
+  color: var(--texto-secundario);
+  display: flex;
+  font-size: 0.78rem;
+  font-weight: 700;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.tipo-entrada {
+  color: var(--color-marca-oscuro);
+  text-transform: uppercase;
+}
+
+.contenido-entrada p {
+  margin-bottom: 20px;
+}
+
+.enlace-entrada {
+  align-items: center;
+  color: var(--color-marca-oscuro);
+  display: inline-flex;
+  font-weight: 800;
+  gap: 8px;
+  margin-top: auto;
+  text-decoration: none;
+}
+
+.detalle-entrada {
+  border-top: 1px solid var(--linea);
+  margin-top: 18px;
+  padding-top: 18px;
+}
+
+.detalle-entrada p + p {
+  margin-top: 12px;
+}
+
 /* CONTACTO */
 
 .seccion-contacto {
@@ -459,7 +578,8 @@ footer {
 
   .rejilla-servicios,
   .rejilla-alertas,
-  .rejilla-proceso {
+  .rejilla-proceso,
+  .rejilla-blog {
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -499,8 +619,18 @@ footer {
 
   .rejilla-servicios,
   .rejilla-alertas,
-  .rejilla-proceso {
+  .rejilla-proceso,
+  .rejilla-blog {
     grid-template-columns: 1fr;
+  }
+
+  .cabecera-blog {
+    align-items: start;
+    flex-direction: column;
+  }
+
+  .filtros-blog {
+    justify-content: flex-start;
   }
 
   .acciones-portada,
