@@ -26,25 +26,31 @@
   </head>
 
   <body>
-    <nav class="barra-navegacion" aria-label="Navegación principal">
-      <div class="contenedor-navegacion">
-        <a href="#inicio" class="marca" aria-label="Comer con Gusto">
-          <img src="images/logo.png" alt="Comer con Gusto" class="logo-principal" />
-        </a>
+    <header class="cabecera-principal">
+      <nav class="barra-navegacion" aria-label="Navegación principal">
+        <div class="contenedor-navegacion">
+          <a href="#inicio" class="marca" aria-label="Ir al inicio de Comer con Gusto">
+            <img
+              src="images/logo.png"
+              alt="Comer con Gusto"
+              class="logo-principal"
+            />
+          </a>
 
-        <ul class="enlaces-navegacion">
-          <li><a href="#sobre-mi">Sobre mí</a></li>
-          <li><a href="#disfagia">Disfagia</a></li>
-          <li><a href="#servicios">Servicios</a></li>
-          <li><a href="#proceso">Proceso</a></li>
-          <li><a href="#blog">Blog</a></li>
-          <li><a href="#contacto">Contacto</a></li>
-        </ul>
-      </div>
-    </nav>
+          <ul class="enlaces-navegacion">
+            <li><a href="#sobre-mi">Sobre mí</a></li>
+            <li><a href="#disfagia">Disfagia</a></li>
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#proceso">Proceso</a></li>
+            <li><a href="#blog">Blog</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
 
     <main>
-      <header id="inicio" class="portada">
+      <section id="inicio" class="portada">
         <div class="contenido-portada">
           <div class="texto-portada">
             <p class="etiqueta-seccion">Logopedia especializada en disfagia</p>
@@ -56,12 +62,14 @@
             </p>
 
             <div class="acciones-portada">
-              <a href="#contacto" class="boton-principal">Solicitar información</a>
+              <a href="#contacto" class="boton-principal">
+                Solicitar información
+              </a>
               <a
                 href="https://wa.me/34611959825"
                 class="boton-secundario"
                 target="_blank"
-                rel="noopener"
+                rel="noopener noreferrer"
               >
                 <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
                 WhatsApp
@@ -69,13 +77,22 @@
             </div>
 
             <div class="lista-confianza" aria-label="Puntos destacados">
-              <span><i class="fa-solid fa-check"></i> Atención individualizada</span>
-              <span><i class="fa-solid fa-check"></i> Adaptación a la vida diaria</span>
-              <span><i class="fa-solid fa-check"></i> Apoyo a familias</span>
+              <span>
+                <i class="fa-solid fa-check" aria-hidden="true"></i>
+                Atención individualizada
+              </span>
+              <span>
+                <i class="fa-solid fa-check" aria-hidden="true"></i>
+                Adaptación a la vida diaria
+              </span>
+              <span>
+                <i class="fa-solid fa-check" aria-hidden="true"></i>
+                Apoyo a familias
+              </span>
             </div>
           </div>
 
-          <div class="tarjeta-portada" aria-label="Especialidad de Comer con Gusto">
+          <div class="tarjeta-portada">
             <img src="images/comida1.jpg" alt="Plato adaptado y apetecible" />
             <div class="nota-portada">
               <strong>Disfagia</strong>
@@ -83,7 +100,7 @@
             </div>
           </div>
         </div>
-      </header>
+      </section>
 
       <section id="sobre-mi" class="seccion">
         <div class="contenedor dos-columnas">
@@ -93,7 +110,10 @@
 
           <div class="bloque-contenido">
             <p class="etiqueta-seccion">Sobre mí</p>
-            <h2>Una mirada especializada para un problema que cambia la vida diaria.</h2>
+            <h2>
+              Una mirada especializada para un problema que cambia la vida
+              diaria.
+            </h2>
 
             <p>
               <strong>Comer con Gusto</strong> nace de una idea sencilla: cada
@@ -119,7 +139,9 @@
         <div class="contenedor introduccion-dividida">
           <div>
             <p class="etiqueta-seccion">Disfagia</p>
-            <h2>Cuando tragar deja de ser automático, conviene actuar a tiempo.</h2>
+            <h2>
+              Cuando tragar deja de ser automático, conviene actuar a tiempo.
+            </h2>
           </div>
 
           <div class="panel-informacion">
@@ -136,21 +158,29 @@
 
         <div class="contenedor rejilla-alertas">
           <article>
-            <i class="fa-solid fa-droplet"></i>
+            <i class="fa-solid fa-droplet" aria-hidden="true"></i>
             <h3>Tos o atragantamientos</h3>
-            <p>Especialmente al beber, comer ciertas texturas o tomar medicación.</p>
+            <p>
+              Especialmente al beber, comer ciertas texturas o tomar
+              medicación.
+            </p>
           </article>
 
           <article>
-            <i class="fa-solid fa-lungs"></i>
+            <i class="fa-solid fa-lungs" aria-hidden="true"></i>
             <h3>Infecciones respiratorias</h3>
-            <p>La aspiración puede aumentar el riesgo de complicaciones respiratorias.</p>
+            <p>
+              La aspiración puede aumentar el riesgo de complicaciones
+              respiratorias.
+            </p>
           </article>
 
           <article>
-            <i class="fa-solid fa-weight-scale"></i>
+            <i class="fa-solid fa-weight-scale" aria-hidden="true"></i>
             <h3>Pérdida de peso o hidratación</h3>
-            <p>Comer menos por miedo o cansancio también necesita atención.</p>
+            <p>
+              Comer menos por miedo o cansancio también necesita atención.
+            </p>
           </article>
         </div>
       </section>
@@ -158,32 +188,46 @@
       <section id="servicios" class="seccion">
         <div class="contenedor encabezado-seccion">
           <p class="etiqueta-seccion">Servicios</p>
-          <h2>Intervención centrada en la seguridad, la autonomía y el disfrute.</h2>
+          <h2>
+            Intervención centrada en la seguridad, la autonomía y el disfrute.
+          </h2>
         </div>
 
         <div class="contenedor rejilla-servicios">
           <article class="tarjeta-servicio">
-            <i class="fa-solid fa-stethoscope"></i>
+            <i class="fa-solid fa-stethoscope" aria-hidden="true"></i>
             <h3>Evaluación de la deglución</h3>
-            <p>Valoración clínica y funcional para entender qué ocurre y qué necesita cada caso.</p>
+            <p>
+              Valoración clínica y funcional para entender qué ocurre y qué
+              necesita cada caso.
+            </p>
           </article>
 
           <article class="tarjeta-servicio">
-            <i class="fa-solid fa-utensils"></i>
+            <i class="fa-solid fa-utensils" aria-hidden="true"></i>
             <h3>Adaptación de texturas</h3>
-            <p>Recomendaciones para comer y beber de forma más segura sin perder apetito.</p>
+            <p>
+              Recomendaciones para comer y beber de forma más segura sin perder
+              apetito.
+            </p>
           </article>
 
           <article class="tarjeta-servicio">
-            <i class="fa-solid fa-dumbbell"></i>
+            <i class="fa-solid fa-dumbbell" aria-hidden="true"></i>
             <h3>Ejercicios terapéuticos</h3>
-            <p>Trabajo de musculatura orofacial y estrategias de deglución según objetivos.</p>
+            <p>
+              Trabajo de musculatura orofacial y estrategias de deglución según
+              objetivos.
+            </p>
           </article>
 
           <article class="tarjeta-servicio">
-            <i class="fa-solid fa-user-group"></i>
+            <i class="fa-solid fa-user-group" aria-hidden="true"></i>
             <h3>Asesoramiento familiar</h3>
-            <p>Pautas claras para cuidadores, familiares y entorno cercano del paciente.</p>
+            <p>
+              Pautas claras para cuidadores, familiares y entorno cercano del
+              paciente.
+            </p>
           </article>
         </div>
       </section>
@@ -198,19 +242,28 @@
           <article>
             <span>01</span>
             <h3>Escucha y valoración</h3>
-            <p>Revisamos síntomas, antecedentes, rutinas y dificultades reales en las comidas.</p>
+            <p>
+              Revisamos síntomas, antecedentes, rutinas y dificultades reales
+              en las comidas.
+            </p>
           </article>
 
           <article>
             <span>02</span>
             <h3>Plan personalizado</h3>
-            <p>Definimos objetivos, estrategias, ejercicios y recomendaciones concretas.</p>
+            <p>
+              Definimos objetivos, estrategias, ejercicios y recomendaciones
+              concretas.
+            </p>
           </article>
 
           <article>
             <span>03</span>
             <h3>Seguimiento</h3>
-            <p>Ajustamos el tratamiento para que sea sostenible en casa y en el día a día.</p>
+            <p>
+              Ajustamos el tratamiento para que sea sostenible en casa y en el
+              día a día.
+            </p>
           </article>
         </div>
       </section>
@@ -219,7 +272,9 @@
         <div class="contenedor cabecera-blog">
           <div class="encabezado-seccion">
             <p class="etiqueta-seccion">Blog</p>
-            <h2>Ideas y recursos para comer con más seguridad y confianza.</h2>
+            <h2>
+              Ideas y recursos para comer con más seguridad y confianza.
+            </h2>
             <p>
               Notas prácticas, novedades y vídeos sobre disfagia, alimentación
               adaptada y acompañamiento familiar.
@@ -227,49 +282,64 @@
           </div>
 
           <div class="filtros-blog" aria-label="Filtrar entradas del blog">
-            <button class="filtro-blog activo" type="button" data-filtro="todos">Todo</button>
-            <button class="filtro-blog" type="button" data-filtro="nota">Notas</button>
-            <button class="filtro-blog" type="button" data-filtro="video">Vídeos</button>
+            <button
+              class="filtro-blog activo"
+              type="button"
+              data-filtro="todos"
+            >
+              Todo
+            </button>
+            <button class="filtro-blog" type="button" data-filtro="nota">
+              Notas
+            </button>
+            <button class="filtro-blog" type="button" data-filtro="video">
+              Vídeos
+            </button>
           </div>
         </div>
 
-        <div id="entradas-blog" class="contenedor rejilla-blog" aria-live="polite"></div>
+        <div
+          id="entradas-blog"
+          class="contenedor rejilla-blog"
+          aria-live="polite"
+        ></div>
       </section>
 
       <section id="contacto" class="seccion seccion-contacto">
-        <div class="contenedor diseno-contacto">
-          <div>
+        <div class="contenedor contacto-grid">
+          <div class="contacto-info">
             <p class="etiqueta-seccion">Contacto</p>
-            <h2>Hablemos de tu caso.</h2>
+            <h2>Solicita información o agenda tu cita.</h2>
             <p>
               Si necesitas orientación o quieres concertar una cita, puedes
-              contactar directamente por teléfono, correo o WhatsApp.
+              contactar mediante el formulario, teléfono, correo o WhatsApp.
             </p>
-          </div>
 
-          <div class="tarjeta-contacto">
-            <a href="mailto:rebecaramos.logopeda@gmail.com">
-              <i class="fa-solid fa-envelope"></i>
-              rebecaramos.logopeda@gmail.com
-            </a>
+            <div class="lista-contacto">
+              <a href="mailto:rebecaramos.logopeda@gmail.com">
+                <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                <span>rebecaramos.logopeda@gmail.com</span>
+              </a>
 
-            <a href="tel:611959825">
-              <i class="fa-solid fa-phone"></i>
-              611 95 98 25
-            </a>
+              <a href="tel:+34611959825">
+                <i class="fa-solid fa-phone" aria-hidden="true"></i>
+                <span>611 95 98 25</span>
+              </a>
 
-            <p>
-              <i class="fa-solid fa-location-dot"></i>
-              Telde · Las Palmas
-            </p>
+              <p>
+                <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                <span>Telde · Las Palmas</span>
+              </p>
+            </div>
 
             <div class="acciones-contacto">
               <a
                 href="https://wa.me/34611959825"
                 class="boton-principal"
                 target="_blank"
-                rel="noopener"
+                rel="noopener noreferrer"
               >
+                <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
                 Escribir por WhatsApp
               </a>
 
@@ -277,45 +347,180 @@
                 href="https://www.instagram.com/comercon_gusto/"
                 class="boton-secundario"
                 target="_blank"
-                rel="noopener"
+                rel="noopener noreferrer"
               >
+                <i class="fa-brands fa-instagram" aria-hidden="true"></i>
                 Instagram
               </a>
             </div>
           </div>
+
+          <form
+            name="contacto"
+            method="POST"
+            data-netlify="true"
+            data-netlify-honeypot="bot-field"
+            class="formulario-contacto"
+          >
+            <input type="hidden" name="form-name" value="contacto" />
+
+            <p class="campo-oculto">
+              <label>
+                No rellenes este campo:
+                <input name="bot-field" />
+              </label>
+            </p>
+
+            <div class="campo-formulario">
+              <label for="nombre">Nombre</label>
+              <input
+                type="text"
+                id="nombre"
+                name="nombre"
+                placeholder="Tu nombre"
+                autocomplete="name"
+                required
+              />
+            </div>
+
+            <div class="campo-formulario">
+              <label for="email">Correo electrónico</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="tu@email.com"
+                autocomplete="email"
+                required
+              />
+            </div>
+
+            <div class="campo-formulario">
+              <label for="mensaje">Mensaje</label>
+              <textarea
+                id="mensaje"
+                name="mensaje"
+                rows="5"
+                maxlength="300"
+                placeholder="Cuéntame brevemente qué necesitas"
+                required
+              ></textarea>
+              <p id="contador-mensaje" class="contador-mensaje">
+                Caracteres: 0/300
+              </p>
+            </div>
+
+            <button type="submit" class="boton-principal">
+              <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
+              Enviar mensaje
+            </button>
+
+            <p
+              id="mensaje-formulario"
+              class="mensaje-formulario"
+              role="status"
+              aria-live="polite"
+            ></p>
+          </form>
         </div>
       </section>
     </main>
 
-    <footer>
-      <div class="contenido-footer">
-        <img src="images/logo3.png" alt="Comer con Gusto" class="logo-footer" />
-
-        <p>© 2026 Comer con Gusto · Rebeca Ramos Carballo</p>
-
-        <div class="iconos-sociales">
-          <a
-            href="https://www.instagram.com/comercon_gusto/"
-            target="_blank"
-            rel="noopener"
-            aria-label="Instagram"
-          >
-            <i class="fab fa-instagram"></i>
-          </a>
-
-          <a href="tel:611959825" aria-label="Teléfono">
-            <i class="fa-solid fa-phone"></i>
-          </a>
-
-          <a
-            href="https://www.doctoralia.es/rebeca-ramos-carballo/logopeda/santa-brigida"
-            target="_blank"
-            rel="noopener"
-            aria-label="Doctoralia"
-          >
-            <i class="fa-solid fa-user-doctor"></i>
-          </a>
+    <footer class="footer">
+      <div class="contenedor footer-grid">
+        <div class="footer-marca">
+          <img
+            src="images/logo3.png"
+            alt="Comer con Gusto"
+            class="logo-footer"
+          />
+          <p>
+            Logopedia especializada en disfagia, alimentación segura y
+            acompañamiento en Gran Canaria.
+          </p>
         </div>
+
+        <div>
+          <h2 class="titulo-footer">Secciones</h2>
+          <ul class="footer-enlaces">
+            <li><a href="#sobre-mi">Sobre mí</a></li>
+            <li><a href="#disfagia">Disfagia</a></li>
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#proceso">Proceso</a></li>
+            <li><a href="#blog">Blog</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h2 class="titulo-footer">Contacto</h2>
+          <ul class="footer-enlaces footer-contacto">
+            <li>
+              <a href="mailto:rebecaramos.logopeda@gmail.com">
+                <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                Email
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://wa.me/34611959825"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+                WhatsApp
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.doctoralia.es/rebeca-ramos-carballo/logopeda/santa-brigida"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i class="fa-solid fa-user-doctor" aria-hidden="true"></i>
+                Doctoralia
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.instagram.com/comercon_gusto/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+                Instagram
+              </a>
+            </li>
+          </ul>
+
+          <div class="iconos-sociales" aria-label="Redes sociales y contacto">
+            <a
+              href="https://www.instagram.com/comercon_gusto/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+            >
+              <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+            </a>
+
+            <a href="tel:+34611959825" aria-label="Llamar por teléfono">
+              <i class="fa-solid fa-phone" aria-hidden="true"></i>
+            </a>
+
+            <a
+              href="https://www.doctoralia.es/rebeca-ramos-carballo/logopeda/santa-brigida"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Doctoralia"
+            >
+              <i class="fa-solid fa-user-doctor" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="contenedor footer-copy">
+        <p>© 2026 Comer con Gusto · Rebeca Ramos Carballo</p>
       </div>
     </footer>
 
