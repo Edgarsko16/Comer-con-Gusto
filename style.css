@@ -9,14 +9,15 @@
   --verde-suave: #7f9b82;
   --dorado: #c9955e;
   --linea: #eadfd3;
-  --sombra: 0 18px 45px rgba(76, 52, 35, 0.12);
+  --sombra: 50px 18px 45px rgba(76, 52, 35, 0.12);
 }
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: bree-serif, sans-serif;
+  font-family: apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
+    "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 html {
@@ -30,7 +31,6 @@ section {
 body {
   background: var(--fondo);
   color: var(--texto-principal);
-  font-family: "Inter", sans-serif;
   line-height: 1.65;
 }
 
@@ -126,7 +126,7 @@ a {
 
 .etiqueta-seccion {
   color: var(--color-marca-oscuro);
-  font-size: 0.78rem;
+  font-size: 1rem;
   font-weight: 800;
   letter-spacing: 0.08em;
   margin-bottom: 12px;
@@ -141,7 +141,7 @@ h3 {
 }
 
 h1 {
-  font-size: clamp(2.45rem, 6vw, 4.7rem);
+  font-size: 60px;
   max-width: 820px;
 }
 
@@ -158,7 +158,9 @@ h3 {
 .texto-destacado {
   color: #4d5b55;
   font-size: 1.18rem;
-  margin: 24px 0 30px;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  margin-top: 10px;
   max-width: 610px;
 }
 
@@ -167,6 +169,7 @@ h3 {
   display: flex;
   flex-wrap: wrap;
   gap: 14px;
+  margin-top: 28px;
 }
 
 .boton-principal,
@@ -231,13 +234,13 @@ h3 {
 .tarjeta-portada {
   background: var(--superficie);
   border: 1px solid rgba(255, 255, 255, 0.7);
-  border-radius: 8px;
+  border-radius: 20px;
   box-shadow: var(--sombra);
   overflow: hidden;
 }
 
 .tarjeta-portada img {
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 5 / 5;
   height: 100%;
   object-fit: cover;
   width: 100%;
@@ -284,7 +287,7 @@ h3 {
   width: 100%;
 }
 
-.bloque-contenido p,
+.bloque-contenido p:not(.etiqueta-seccion),
 .panel-informacion p,
 .diseno-contacto p {
   color: var(--texto-secundario);
