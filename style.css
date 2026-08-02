@@ -2,7 +2,7 @@
   --fondo: #f7f1e9;
   --superficie: #ffffff;
   --superficie-suave: #fff8f2;
-  --texto-principal: #24312d;
+  --texto-principal: #163154;
   --texto-secundario: #64706b;
   --color-marca: #e86d5a;
   --color-marca-oscuro: #bf4e3f;
@@ -16,6 +16,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: bree-serif, sans-serif;
 }
 
 html {
@@ -78,7 +79,7 @@ a {
 }
 
 .logo-principal {
-  width: 160px;
+  width: 350px;
   height: auto;
 }
 
@@ -91,7 +92,7 @@ a {
 
 .enlaces-navegacion a {
   color: var(--texto-principal);
-  font-size: 0.95rem;
+  font-size: 18px;
   font-weight: 700;
   text-decoration: none;
 }
