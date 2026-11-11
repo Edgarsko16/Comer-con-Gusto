@@ -7,6 +7,149 @@ if (instagramLink) {
 }
 
 /* =====================================================
+   MENÚ MÓVIL ACCESIBLE
+   ===================================================== */
+
+const cabecera = document.querySelector(".cabecera-principal");
+const botonMenu = document.querySelector(".boton-menu");
+const menuPrincipal = document.querySelector("#menu-principal");
+const textoBotonMenu = document.querySelector(".texto-boton-menu");
+const consultaMovil = window.matchMedia("(max-width: 1100px)");
+
+function menuEstaAbierto() {
+  return botonMenu?.getAttribute("aria-expanded") === "true";
+}
+
+function abrirMenu() {
+  botonMenu.setAttribute("aria-expanded", "true");
+  botonMenu.setAttribute("aria-label", "Cerrar menú");
+  menuPrincipal.classList.add("abierta");
+
+  /* Llevamos el foco al primer enlace del menú */
+  const primerEnlace = menuPrincipal.querySelector("a");
+  if (primerEnlace) {
+    primerEnlace.focus();
+  }
+}
+
+function cerrarMenu({ devolverFoco = false } = {}) {
+  botonMenu.setAttribute("aria-expanded", "false");
+  botonMenu.setAttribute("aria-label", "Abrir menú");
+  menuPrincipal.classList.remove("abierta");
+
+  if (devolverFoco) {
+    botonMenu.focus();
+  }
+}
+
+if (cabecera && botonMenu && menuPrincipal) {
+  botonMenu.setAttribute("aria-label", "Abrir menú");
+
+  botonMenu.addEventListener("click", () => {
+    if (menuEstaAbierto()) {
+      cerrarMenu({ devolverFoco: true });
+    } else {
+      abrirMenu();
+    }
+  });
+
+  /* Escape cierra el menú y devuelve el foco al botón */
+  document.addEventListener("keydown", (evento) => {
+    if (evento.key === "Escape" && menuEstaAbierto()) {
+      cerrarMenu({ devolverFoco: true });
+    }
+  });
+
+  /* Al elegir una sección, se cierra el menú */
+  menuPrincipal.addEventListener("click", (evento) => {
+    if (evento.target.closest("a") && consultaMovil.matches) {
+      cerrarMenu();
+    }
+  });
+
+  /* Si el foco sale de la cabecera (tabulando), se cierra */
+  cabecera.addEventListener("focusout", (evento) => {
+    if (
+      menuEstaAbierto() &&
+      evento.relatedTarget &&
+      !cabecera.contains(evento.relatedTarget)
+    ) {
+      cerrarMenu();
+    }
+  });
+
+  /* Clic fuera de la cabecera */
+  document.addEventListener("click", (evento) => {
+    if (menuEstaAbierto() && !cabecera.contains(evento.target)) {
+      cerrarMenu();
+    }
+  });
+
+  /* Al pasar a escritorio, se restablece el estado */
+  consultaMovil.addEventListener("change", (evento) => {
+    if (!evento.matches && menuEstaAbierto()) {
+      cerrarMenu();
+    }
+  });
+}
+
+/* =====================================================
+   NAVEGACIÓN: SECCIÓN ACTIVA
+   ===================================================== */
+
+const enlacesSeccion = document.querySelectorAll(
+  '.enlaces-navegacion a[href^="#"]',
+);
+
+if ("IntersectionObserver" in window && enlacesSeccion.length) {
+  const mapaEnlaces = new Map();
+
+  enlacesSeccion.forEach((enlace) => {
+    const seccion = document.querySelector(enlace.getAttribute("href"));
+    if (seccion) {
+      mapaEnlaces.set(seccion, enlace);
+    }
+  });
+
+  const marcarActivo = (enlaceActivo) => {
+    enlacesSeccion.forEach((enlace) => {
+      if (enlace === enlaceActivo) {
+        enlace.setAttribute("aria-current", "true");
+      } else {
+        enlace.removeAttribute("aria-current");
+      }
+    });
+  };
+
+  const observador = new IntersectionObserver(
+    (entradas) => {
+      entradas.forEach((entrada) => {
+        if (entrada.isIntersecting) {
+          marcarActivo(mapaEnlaces.get(entrada.target));
+        }
+      });
+    },
+    /* Una franja estrecha en el tercio superior de la pantalla */
+    { rootMargin: "-30% 0px -65% 0px" },
+  );
+
+  mapaEnlaces.forEach((_, seccion) => observador.observe(seccion));
+
+  /* En la portada no se marca ninguna sección */
+  const portada = document.querySelector("#inicio");
+  if (portada) {
+    new IntersectionObserver(
+      (entradas) => {
+        if (entradas[0].isIntersecting) {
+          marcarActivo(null);
+        }
+      },
+      { rootMargin: "-30% 0px -65% 0px" },
+    ).observe(portada);
+  }
+}
+
+/* =====================================================
    BLOG
    ===================================================== */
 
@@ -31,7 +174,7 @@ const publicacionesBlog = [
       "Observar cómo come una persona ayuda a detectar cambios importantes. La tos frecuente, los atragantamientos, una voz húmeda o el cansancio durante las comidas merecen atención.",
       "Ante estas señales, una valoración profesional permite conocer la causa y adaptar la alimentación de forma segura.",
     ],
-    imagen: "images/comida2.jpg",
+    imagen: "images/web/comida2-800.webp", // original: images/comida2.jpg
   },
   {
     tipo: "video",
@@ -40,7 +183,7 @@ const publicacionesBlog = [
     resumen:
       "Un recurso visual con ideas para cuidar la textura, la presentación y el disfrute al comer.",
     enlace: "https://www.instagram.com/p/DXj73BJIwM6/",
-    imagen: "images/comida1.jpg",
+    imagen: "images/web/comida1-800.webp", // original: images/comida1.jpg
   },
   {
     tipo: "nota",
@@ -73,9 +216,19 @@ const formatoFecha = new Intl.DateTimeFormat("es-ES", {
 function crearEntradaBlog(publicacion, indice) {
   const esVideo = publicacion.tipo === "video";
 
+  /*
+   * Los vídeos son enlaces externos (avisamos de la pestaña nueva).
+   * Las notas son botones que despliegan el contenido en la página.
+   */
+  const etiquetaApertura = esVideo ? "a" : "button";
+
   const atributosEnlace = esVideo
     ? `href="${publicacion.enlace}" target="_blank" rel="noopener noreferrer"`
-    : `href="#detalle-blog-${indice}" data-abrir-nota="${indice}" aria-expanded="false"`;
+    : `type="button" data-abrir-nota="${indice}" aria-expanded="false" aria-controls="detalle-blog-${indice}"`;
+
+  const avisoPestana = esVideo
+    ? '<span class="solo-lectores"> (se abre en una pestaña nueva)</span>'
+    : "";
 
   const detalle = esVideo
     ? ""
@@ -97,7 +250,10 @@ function crearEntradaBlog(publicacion, indice) {
         class="imagen-entrada"
         src="${publicacion.imagen}"
         alt=""
+        width="800"
+        height="500"
         loading="lazy"
+        decoding="async"
       />
 
       <div class="contenido-entrada">
@@ -117,8 +273,8 @@ function crearEntradaBlog(publicacion, indice) {
 
         <p>${publicacion.resumen}</p>
 
-        <a class="enlace-entrada" ${atributosEnlace}>
-          <span>${esVideo ? "Ver vídeo" : "Leer nota"}</span>
+        <${etiquetaApertura} class="enlace-entrada" ${atributosEnlace}>
+          <span>${esVideo ? "Ver vídeo" : "Leer nota"}</span>${avisoPestana}
 
           <i
             class="fa-solid ${
@@ -126,7 +282,7 @@ function crearEntradaBlog(publicacion, indice) {
             }"
             aria-hidden="true"
           ></i>
-        </a>
+        </${etiquetaApertura}>
 
         ${detalle}
       </div>
@@ -168,9 +324,11 @@ filtrosBlog.forEach((boton) => {
   boton.addEventListener("click", () => {
     filtrosBlog.forEach((filtro) => {
       filtro.classList.remove("activo");
+      filtro.setAttribute("aria-pressed", "false");
     });
 
     boton.classList.add("activo");
+    boton.setAttribute("aria-pressed", "true");
 
     mostrarPublicaciones(boton.dataset.filtro);
   });

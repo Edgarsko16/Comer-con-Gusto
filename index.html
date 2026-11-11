@@ -7,36 +7,73 @@
       name="description"
       content="Comer con Gusto, logopedia especializada en disfagia en Gran Canaria. Evaluación, tratamiento y asesoramiento para una alimentación más segura."
     />
+    <meta name="theme-color" content="#ffffff" />
 
     <title>Comer con Gusto | Logopedia especializada en disfagia</title>
 
-    <link rel="stylesheet" href="style.css" />
+    <!-- Marca el documento como "con JavaScript" antes de pintar, para que el menú móvil no parpadee -->
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
 
+    <!-- Tipografía: solo los pesos que se usan -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
     />
 
+    <!-- Iconos: carga diferida para no bloquear el primer pintado -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      media="print"
+      onload="this.media='all'"
     />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      />
+    </noscript>
+
+    <link rel="preload" as="image" type="image/webp"
+      href="images/web/maniobra-800.webp"
+      imagesrcset="images/web/maniobra-800.webp 800w, images/web/maniobra-1200.webp 1200w"
+      imagesizes="(max-width: 900px) 90vw, 500px" />
+
+    <link rel="stylesheet" href="style.css" />
   </head>
 
   <body>
-    <header class="cabecera-principal">
-      <nav class="barra-navegacion" aria-label="Navegación principal">
-        <div class="contenedor-navegacion">
-          <a href="#inicio" class="marca" aria-label="Ir al inicio de Comer con Gusto">
-            <img
-              src="images/logo-correcto.png"
-              alt="Comer con Gusto"
-              class="logo-principal"
-            />
-          </a>
+    <a class="saltar-contenido" href="#contenido">Saltar al contenido</a>
 
+    <header class="cabecera-principal">
+      <div class="contenedor-navegacion">
+        <a href="#inicio" class="marca" aria-label="Ir al inicio de Comer con Gusto">
+          <img
+            src="images/web/logo-comer-con-gusto.png"
+            alt="Comer con Gusto"
+            class="logo-principal"
+            width="329"
+            height="106"
+          />
+        </a>
+
+        <button
+          class="boton-menu"
+          type="button"
+          aria-expanded="false"
+          aria-controls="menu-principal"
+        >
+          <span class="icono-menu" aria-hidden="true">
+            <span></span>
+          </span>
+          <span class="texto-boton-menu">Menú</span>
+        </button>
+
+        <nav id="menu-principal" class="navegacion" aria-label="Navegación principal">
           <ul class="enlaces-navegacion">
             <li><a href="#sobre-mi">Sobre mí</a></li>
             <li><a href="#disfagia">Disfagia</a></li>
@@ -45,25 +82,40 @@
             <li><a href="#blog">Blog</a></li>
             <li><a href="#contacto">Contacto</a></li>
           </ul>
-        </div>
-      </nav>
+
+          <a
+            href="https://www.doctoralia.es/z/yGJDPR"
+            class="boton-principal boton-cita"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Pedir cita<span class="solo-lectores"> (se abre en una pestaña nueva)</span>
+          </a>
+        </nav>
+      </div>
     </header>
 
-    <main>
-      <section id="inicio" class="portada">
-        <div class="contenido-portada">
+    <main id="contenido" tabindex="-1">
+      <!-- PORTADA -->
+      <section id="inicio" class="portada" aria-labelledby="titulo-portada">
+        <div class="contenedor contenido-portada">
           <div class="texto-portada">
             <p class="etiqueta-seccion">Logopeda especialista en la rehabilitación de la disfagia</p>
-            <h1>Comer con seguridad para una mejor calidad de vida</h1>
+            <h1 id="titulo-portada">Comer con seguridad para una mejor calidad de vida</h1>
 
             <p class="texto-destacado">
-              La llegada del diagnóstico de disfagia no supone rechazar una alimentación placentera: 
+              La llegada del diagnóstico de disfagia no supone rechazar una alimentación placentera:
               hay un amplio camino que recorrer.
             </p>
 
             <div class="acciones-portada">
-              <a href="https://www.doctoralia.es/z/yGJDPR" target="_blank" class="boton-principal">
-                Solicitar información
+              <a
+                href="https://www.doctoralia.es/z/yGJDPR"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="boton-principal"
+              >
+                Solicitar información<span class="solo-lectores"> (se abre en una pestaña nueva)</span>
               </a>
               <a
                 href="https://wa.me/34611959825"
@@ -72,27 +124,74 @@
                 rel="noopener noreferrer"
               >
                 <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
-                WhatsApp
+                WhatsApp<span class="solo-lectores"> (se abre en una pestaña nueva)</span>
               </a>
             </div>
-
           </div>
 
-          <div class="tarjeta-portada">
-            <img src="images/maniobra.png" alt="Plato adaptado y apetecible" />
+          <div class="imagen-portada">
+            <div class="marco-portada" aria-hidden="true"></div>
+            <picture>
+              <source
+                type="image/webp"
+                srcset="images/web/maniobra-800.webp 800w, images/web/maniobra-1200.webp 1200w"
+                sizes="(max-width: 900px) 90vw, 500px"
+              />
+              <img
+                src="images/web/maniobra-1200.jpg"
+                alt="Logopeda valorando la deglución de un paciente con la mano apoyada en su cuello"
+                width="1200"
+                height="961"
+                fetchpriority="high"
+              />
+            </picture>
+            <svg class="sonrisa-portada" viewBox="0 0 240 60" aria-hidden="true" focusable="false">
+              <path d="M8 10 Q120 90 232 10" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round" />
+            </svg>
           </div>
         </div>
       </section>
 
-      <section id="sobre-mi" class="seccion">
-        <div class="contenedor dos-columnas">
-          <div class="imagen-perfil">
-            <img src="images/Rebeca.jpg" alt="Rebeca Ramos, logopeda" />
+      <!-- SOBRE MÍ -->
+      <section id="sobre-mi" class="seccion seccion-crema" aria-labelledby="titulo-sobre-mi">
+        <div class="contenedor sobre-mi-grid">
+          <div class="columna-perfil">
+            <div class="imagen-perfil">
+              <picture>
+                <source type="image/webp" srcset="images/web/rebeca-683.webp" />
+                <img
+                  src="images/Rebeca.jpg"
+                  alt="Rebeca Ramos Carballo, logopeda, sonriendo al aire libre"
+                  width="683"
+                  height="911"
+                  loading="lazy"
+                />
+              </picture>
+            </div>
+
+            <div class="ficha-presentacion">
+              <p class="ficha-nombre">Rebeca Ramos Carballo</p>
+              <p class="ficha-profesion">Logopeda especializada en deglución</p>
+              <dl class="ficha-datos">
+                <div>
+                  <dt><i class="fa-solid fa-utensils" aria-hidden="true"></i> Especialidad</dt>
+                  <dd>Disfagia y alimentación segura</dd>
+                </div>
+                <div>
+                  <dt><i class="fa-solid fa-user-group" aria-hidden="true"></i> Acompañamiento</dt>
+                  <dd>Pacientes y familias</dd>
+                </div>
+                <div>
+                  <dt><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Ubicación</dt>
+                  <dd>Telde · Las Palmas</dd>
+                </div>
+              </dl>
+            </div>
           </div>
 
           <div class="bloque-contenido">
             <p class="etiqueta-seccion">Sobre mí</p>
-            <h2>
+            <h2 id="titulo-sobre-mi">
               Una mirada especializada para un problema que cambia tu día a día.
             </h2>
 
@@ -106,19 +205,22 @@
               comidas, reducir miedos y recuperar rutinas posibles.
             </p>
 
-            <p>
-              El objetivo no es solo tragar mejor. Es volver a sentarse a la
-              mesa con confianza.
-            </p>
+            <blockquote class="cita-destacada">
+              <p>
+                El objetivo no es solo tragar mejor. Es volver a sentarse a la
+                mesa con confianza.
+              </p>
+            </blockquote>
           </div>
         </div>
       </section>
 
-      <section id="disfagia" class="seccion seccion-clara">
+      <!-- DISFAGIA -->
+      <section id="disfagia" class="seccion seccion-blanca" aria-labelledby="titulo-disfagia">
         <div class="contenedor introduccion-dividida">
           <div>
             <p class="etiqueta-seccion">Disfagia</p>
-            <h2>
+            <h2 id="titulo-disfagia">
               Cuando tragar deja de ser automático, conviene actuar a tiempo.
             </h2>
           </div>
@@ -135,143 +237,172 @@
           </div>
         </div>
 
-        <div class="contenedor rejilla-alertas">
-          <article>
-            <i class="fa-solid fa-droplet" aria-hidden="true"></i>
-            <h3>Tos o atragantamientos</h3>
-            <p>
-              Especialmente al beber, comer ciertas texturas o tomar
-              medicación.
-            </p>
-          </article>
+        <div class="contenedor">
+          <div class="bloque-alertas">
+            <h3 class="titulo-alertas">Señales de alerta</h3>
+            <ul class="lista-alertas">
+              <li>
+                <span class="circulo-icono" aria-hidden="true">
+                  <i class="fa-solid fa-droplet"></i>
+                </span>
+                <div>
+                  <h4>Tos o atragantamientos</h4>
+                  <p>
+                    Especialmente al beber, comer ciertas texturas o tomar
+                    medicación.
+                  </p>
+                </div>
+              </li>
 
-          <article>
-            <i class="fa-solid fa-lungs" aria-hidden="true"></i>
-            <h3>Infecciones respiratorias</h3>
-            <p>
-              La aspiración puede aumentar el riesgo de complicaciones
-              respiratorias.
-            </p>
-          </article>
+              <li>
+                <span class="circulo-icono" aria-hidden="true">
+                  <i class="fa-solid fa-lungs"></i>
+                </span>
+                <div>
+                  <h4>Infecciones respiratorias</h4>
+                  <p>
+                    La aspiración puede aumentar el riesgo de complicaciones
+                    respiratorias.
+                  </p>
+                </div>
+              </li>
 
-          <article>
-            <i class="fa-solid fa-weight-scale" aria-hidden="true"></i>
-            <h3>Pérdida de peso o hidratación</h3>
-            <p>
-              Comer menos por miedo o cansancio también necesita atención.
-            </p>
-          </article>
+              <li>
+                <span class="circulo-icono" aria-hidden="true">
+                  <i class="fa-solid fa-weight-scale"></i>
+                </span>
+                <div>
+                  <h4>Pérdida de peso o hidratación</h4>
+                  <p>
+                    Comer menos por miedo o cansancio también necesita atención.
+                  </p>
+                </div>
+              </li>
+            </ul>
+          </div>
         </div>
       </section>
 
-      <section id="servicios" class="seccion">
+      <!-- SERVICIOS -->
+      <section id="servicios" class="seccion seccion-blanca seccion-separada" aria-labelledby="titulo-servicios">
         <div class="contenedor encabezado-seccion">
           <p class="etiqueta-seccion">Servicios</p>
-          <h2>
+          <h2 id="titulo-servicios">
             Intervención centrada en la seguridad, la autonomía y el disfrute.
           </h2>
         </div>
 
-        <div class="contenedor rejilla-servicios">
-          <article class="tarjeta-servicio">
-            <i class="fa-solid fa-stethoscope" aria-hidden="true"></i>
+        <ul class="contenedor rejilla-servicios">
+          <li class="tarjeta-servicio">
+            <span class="circulo-icono" aria-hidden="true">
+              <i class="fa-solid fa-stethoscope"></i>
+            </span>
             <h3>Evaluación de la deglución</h3>
             <p>
               Valoración clínica y funcional para entender qué ocurre y qué
               necesita cada caso.
             </p>
-          </article>
+          </li>
 
-          <article class="tarjeta-servicio">
-            <i class="fa-solid fa-utensils" aria-hidden="true"></i>
+          <li class="tarjeta-servicio">
+            <span class="circulo-icono" aria-hidden="true">
+              <i class="fa-solid fa-utensils"></i>
+            </span>
             <h3>Adaptación de texturas</h3>
             <p>
               Recomendaciones para comer y beber de forma más segura sin perder
               apetito.
             </p>
-          </article>
+          </li>
 
-          <article class="tarjeta-servicio">
-            <i class="fa-solid fa-dumbbell" aria-hidden="true"></i>
+          <li class="tarjeta-servicio">
+            <span class="circulo-icono" aria-hidden="true">
+              <i class="fa-solid fa-dumbbell"></i>
+            </span>
             <h3>Ejercicios terapéuticos</h3>
             <p>
               Trabajo de musculatura orofacial y estrategias de deglución según
               objetivos.
             </p>
-          </article>
+          </li>
 
-          <article class="tarjeta-servicio">
-            <i class="fa-solid fa-user-group" aria-hidden="true"></i>
+          <li class="tarjeta-servicio">
+            <span class="circulo-icono" aria-hidden="true">
+              <i class="fa-solid fa-user-group"></i>
+            </span>
             <h3>Asesoramiento familiar</h3>
             <p>
               Pautas claras para cuidadores, familiares y entorno cercano del
               paciente.
             </p>
-          </article>
-        </div>
+          </li>
+        </ul>
       </section>
 
-      <section id="proceso" class="seccion seccion-acento">
+      <!-- CÓMO TRABAJO -->
+      <section id="proceso" class="seccion seccion-crema" aria-labelledby="titulo-proceso">
         <div class="contenedor encabezado-seccion">
           <p class="etiqueta-seccion">Cómo trabajo</p>
-          <h2>Un proceso claro desde la primera consulta.</h2>
+          <h2 id="titulo-proceso">Un proceso claro desde la primera consulta.</h2>
         </div>
 
-        <div class="contenedor rejilla-proceso">
-          <article>
-            <span>01</span>
+        <ol class="contenedor rejilla-proceso">
+          <li class="paso-proceso">
+            <span class="numero-paso" aria-hidden="true">01</span>
             <h3>Escucha y valoración</h3>
             <p>
               Revisamos síntomas, antecedentes, rutinas y dificultades reales
               en las comidas.
             </p>
-          </article>
+          </li>
 
-          <article>
-            <span>02</span>
+          <li class="paso-proceso">
+            <span class="numero-paso" aria-hidden="true">02</span>
             <h3>Plan personalizado</h3>
             <p>
               Definimos objetivos, estrategias, ejercicios y recomendaciones
               concretas.
             </p>
-          </article>
+          </li>
 
-          <article>
-            <span>03</span>
+          <li class="paso-proceso">
+            <span class="numero-paso" aria-hidden="true">03</span>
             <h3>Seguimiento</h3>
             <p>
               Ajustamos el tratamiento para que sea sostenible en casa y en el
               día a día.
             </p>
-          </article>
-        </div>
+          </li>
+        </ol>
       </section>
 
-      <section id="blog" class="seccion seccion-blog">
+      <!-- BLOG -->
+      <section id="blog" class="seccion seccion-marfil" aria-labelledby="titulo-blog">
         <div class="contenedor cabecera-blog">
           <div class="encabezado-seccion">
             <p class="etiqueta-seccion">Blog</p>
-            <h2>
+            <h2 id="titulo-blog">
               Ideas y recursos para comer con más seguridad y confianza.
             </h2>
-            <p>
+            <p class="introduccion-seccion">
               Notas prácticas, novedades y vídeos sobre disfagia, alimentación
               adaptada y acompañamiento familiar.
             </p>
           </div>
 
-          <div class="filtros-blog" aria-label="Filtrar entradas del blog">
+          <div class="filtros-blog" role="group" aria-label="Filtrar entradas del blog">
             <button
               class="filtro-blog activo"
               type="button"
               data-filtro="todos"
+              aria-pressed="true"
             >
               Todo
             </button>
-            <button class="filtro-blog" type="button" data-filtro="nota">
+            <button class="filtro-blog" type="button" data-filtro="nota" aria-pressed="false">
               Notas
             </button>
-            <button class="filtro-blog" type="button" data-filtro="video">
+            <button class="filtro-blog" type="button" data-filtro="video" aria-pressed="false">
               Vídeos
             </button>
           </div>
@@ -284,32 +415,43 @@
         ></div>
       </section>
 
-      <section id="contacto" class="seccion seccion-contacto">
+      <!-- CONTACTO -->
+      <section id="contacto" class="seccion seccion-crema" aria-labelledby="titulo-contacto">
         <div class="contenedor contacto-grid">
           <div class="contacto-info">
             <p class="etiqueta-seccion">Contacto</p>
-            <h2>Solicita información o agenda tu cita.</h2>
+            <h2 id="titulo-contacto">Solicita información o agenda tu cita.</h2>
             <p>
               Si necesitas orientación o quieres concertar una cita, puedes
               contactar mediante el formulario, teléfono, correo o WhatsApp.
             </p>
 
-            <div class="lista-contacto">
-              <a href="mailto:rebecaramos.logopeda@gmail.com">
-                <i class="fa-solid fa-envelope" aria-hidden="true"></i>
-                <span>rebecaramos.logopeda@gmail.com</span>
-              </a>
+            <ul class="lista-contacto">
+              <li>
+                <a href="mailto:rebecaramos.logopeda@gmail.com">
+                  <span class="circulo-icono" aria-hidden="true">
+                    <i class="fa-solid fa-envelope"></i>
+                  </span>
+                  <span>rebecaramos.logopeda@gmail.com</span>
+                </a>
+              </li>
 
-              <a href="tel:+34611959825">
-                <i class="fa-solid fa-phone" aria-hidden="true"></i>
-                <span>611 95 98 25</span>
-              </a>
+              <li>
+                <a href="tel:+34611959825">
+                  <span class="circulo-icono" aria-hidden="true">
+                    <i class="fa-solid fa-phone"></i>
+                  </span>
+                  <span>611 95 98 25</span>
+                </a>
+              </li>
 
-              <p>
-                <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+              <li>
+                <span class="circulo-icono" aria-hidden="true">
+                  <i class="fa-solid fa-location-dot"></i>
+                </span>
                 <span>Telde · Las Palmas</span>
-              </p>
-            </div>
+              </li>
+            </ul>
 
             <div class="acciones-contacto">
               <a
@@ -319,7 +461,7 @@
                 rel="noopener noreferrer"
               >
                 <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
-                Escribir por WhatsApp
+                Escribir por WhatsApp<span class="solo-lectores"> (se abre en una pestaña nueva)</span>
               </a>
 
               <a
@@ -329,7 +471,7 @@
                 rel="noopener noreferrer"
               >
                 <i class="fa-brands fa-instagram" aria-hidden="true"></i>
-                Instagram
+                Instagram<span class="solo-lectores"> (se abre en una pestaña nueva)</span>
               </a>
             </div>
           </div>
@@ -349,6 +491,8 @@
                 <input name="bot-field" />
               </label>
             </p>
+
+            <p class="nota-formulario">Todos los campos son obligatorios.</p>
 
             <div class="campo-formulario">
               <label for="nombre">Nombre</label>
@@ -382,6 +526,7 @@
                 rows="5"
                 maxlength="300"
                 placeholder="Cuéntame brevemente qué necesitas"
+                aria-describedby="contador-mensaje"
                 required
               ></textarea>
               <p id="contador-mensaje" class="contador-mensaje">
@@ -409,9 +554,12 @@
       <div class="contenedor footer-grid">
         <div class="footer-marca">
           <img
-            src="images/logo3.png"
+            src="images/web/logo-comer-con-gusto.png"
             alt="Comer con Gusto"
             class="logo-footer"
+            width="329"
+            height="106"
+            loading="lazy"
           />
           <p>
             Logopedia especializada en disfagia, alimentación segura y
@@ -419,8 +567,8 @@
           </p>
         </div>
 
-        <div>
-          <h2 class="titulo-footer">Secciones</h2>
+        <nav aria-labelledby="titulo-footer-secciones">
+          <h2 id="titulo-footer-secciones" class="titulo-footer">Secciones</h2>
           <ul class="footer-enlaces">
             <li><a href="#sobre-mi">Sobre mí</a></li>
             <li><a href="#disfagia">Disfagia</a></li>
@@ -429,7 +577,7 @@
             <li><a href="#blog">Blog</a></li>
             <li><a href="#contacto">Contacto</a></li>
           </ul>
-        </div>
+        </nav>
 
         <div>
           <h2 class="titulo-footer">Contacto</h2>
@@ -447,7 +595,7 @@
                 rel="noopener noreferrer"
               >
                 <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
-                WhatsApp
+                WhatsApp<span class="solo-lectores"> (se abre en una pestaña nueva)</span>
               </a>
             </li>
             <li>
@@ -457,7 +605,7 @@
                 rel="noopener noreferrer"
               >
                 <i class="fa-solid fa-user-doctor" aria-hidden="true"></i>
-                Doctoralia
+                Doctoralia<span class="solo-lectores"> (se abre en una pestaña nueva)</span>
               </a>
             </li>
             <li>
@@ -467,34 +615,38 @@
                 rel="noopener noreferrer"
               >
                 <i class="fa-brands fa-instagram" aria-hidden="true"></i>
-                Instagram
+                Instagram<span class="solo-lectores"> (se abre en una pestaña nueva)</span>
               </a>
             </li>
           </ul>
 
-          <div class="iconos-sociales" aria-label="Redes sociales y contacto">
-            <a
-              href="https://www.instagram.com/comercon_gusto/"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Instagram"
-            >
-              <i class="fa-brands fa-instagram" aria-hidden="true"></i>
-            </a>
-
-            <a href="tel:+34611959825" aria-label="Llamar por teléfono">
-              <i class="fa-solid fa-phone" aria-hidden="true"></i>
-            </a>
-
-            <a
-              href="https://www.doctoralia.es/rebeca-ramos-carballo/logopeda/santa-brigida"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Doctoralia"
-            >
-              <i class="fa-solid fa-user-doctor" aria-hidden="true"></i>
-            </a>
-          </div>
+          <ul class="iconos-sociales" aria-label="Redes sociales y contacto">
+            <li>
+              <a
+                href="https://www.instagram.com/comercon_gusto/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram (se abre en una pestaña nueva)"
+              >
+                <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+              </a>
+            </li>
+            <li>
+              <a href="tel:+34611959825" aria-label="Llamar por teléfono">
+                <i class="fa-solid fa-phone" aria-hidden="true"></i>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.doctoralia.es/rebeca-ramos-carballo/logopeda/santa-brigida"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Doctoralia (se abre en una pestaña nueva)"
+              >
+                <i class="fa-solid fa-user-doctor" aria-hidden="true"></i>
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
 
