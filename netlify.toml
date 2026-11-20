@@ -1,0 +1,13 @@
+# Comer con Gusto · despliegue en Netlify
+#
+# Solo se publica la carpeta "dist", que se crea copiando una LISTA CERRADA
+# de archivos públicos. Así, docs-internos/, .claude/ y cualquier otro
+# archivo interno nunca llegan a subirse a Netlify.
+#
+# Si añades un archivo o carpeta pública nueva en la raíz, añádelo
+# también a la lista de "command".
+# Este archivo tiene prioridad sobre la configuración del panel de Netlify.
+
+[build]
+  publish = "dist"
+  command = "rm -rf dist && mkdir dist && cp -R index.html style.css script.js images sesiones-online _redirects dist/"

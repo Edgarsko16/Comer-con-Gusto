@@ -1,0 +1,321 @@
+/* =====================================================
+   SESIONES ONLINE
+   Complementa style.css; reutiliza su paleta y componentes.
+   Textos azul marino o secundario (≥ 4,6:1) y botones
+   blanco sobre coral oscuro (4,8:1), como en el resto de la web.
+   ===================================================== */
+
+/* ---------- Entrada a la consulta ---------- */
+
+.portada-sesion {
+  background: linear-gradient(180deg, var(--blanco) 0%, var(--marfil) 100%);
+  padding: clamp(48px, 7vw, 96px) 0 clamp(56px, 8vw, 104px);
+}
+
+.contenido-sesion {
+  max-width: 760px;
+  text-align: center;
+}
+
+.contenido-sesion .etiqueta-seccion {
+  justify-content: center;
+}
+
+.contenido-sesion h1 {
+  margin-bottom: 20px;
+}
+
+.contenido-sesion .texto-destacado {
+  margin: 0 auto;
+}
+
+.acceso-consulta {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 40px;
+}
+
+/* Botón grande: objetivo táctil de 72 px de alto y texto de 22 px */
+.boton-consulta {
+  font-size: clamp(1.25rem, 1.15rem + 0.5vw, 1.4rem);
+  gap: 14px;
+  min-height: 72px;
+  min-width: min(100%, 360px);
+  padding: 18px 40px;
+}
+
+.boton-consulta i {
+  font-size: 1.2em;
+}
+
+.boton-consulta:focus-visible {
+  outline-offset: 4px;
+  outline-width: 4px;
+}
+
+.nota-boton {
+  color: var(--texto-secundario);
+  font-size: 1rem;
+  max-width: 34em;
+}
+
+.aviso-sesion {
+  background: var(--blanco);
+  border: 2px solid var(--arcilla);
+  border-radius: var(--radio);
+  font-weight: 500;
+  max-width: 36em;
+  padding: 20px 24px;
+}
+
+.aviso-sesion a {
+  color: var(--azul);
+  font-weight: 700;
+  text-underline-offset: 4px;
+  white-space: nowrap;
+}
+
+/* ---------- Secciones ---------- */
+
+.seccion-sesion {
+  padding: clamp(56px, 7vw, 88px) 0;
+}
+
+.seccion-sesion h2 {
+  font-size: clamp(1.6rem, 1.25rem + 1.5vw, 2.2rem);
+}
+
+/* Antes de entrar */
+.lista-preparacion {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 12px;
+}
+
+.lista-preparacion li {
+  align-items: start;
+  background: var(--blanco);
+  border: 1px solid var(--linea);
+  border-radius: var(--radio);
+  display: grid;
+  gap: 16px;
+  grid-template-columns: auto 1fr;
+  padding: 24px;
+}
+
+.lista-preparacion p {
+  color: var(--texto-secundario);
+}
+
+/* Paso a paso con números grandes */
+.pasos-sesion {
+  counter-reset: paso-sesion;
+  display: grid;
+  gap: 20px;
+  list-style: none;
+  margin-top: 12px;
+  max-width: 820px;
+}
+
+.pasos-sesion li {
+  counter-increment: paso-sesion;
+  padding-left: 76px;
+  position: relative;
+}
+
+.pasos-sesion li::before {
+  align-items: center;
+  background: var(--blanco);
+  border: 3px solid var(--arcilla);
+  border-radius: 50%;
+  color: var(--coral-oscuro);
+  content: counter(paso-sesion);
+  display: flex;
+  font-size: 1.5rem;
+  font-weight: 700;
+  height: 56px;
+  justify-content: center;
+  left: 0;
+  position: absolute;
+  top: -4px;
+  width: 56px;
+}
+
+.pasos-sesion h3 {
+  margin-bottom: 4px;
+}
+
+.pasos-sesion p {
+  color: var(--texto-secundario);
+}
+
+.pasos-sesion strong {
+  color: var(--azul);
+}
+
+/* Mientras esperas */
+.bloque-espera,
+.bloque-privacidad {
+  align-items: start;
+  display: grid;
+  gap: 24px;
+  grid-template-columns: auto 1fr;
+  max-width: 820px;
+}
+
+.bloque-espera {
+  background: var(--blanco);
+  border: 1px solid var(--linea);
+  border-left: 6px solid var(--coral);
+  border-radius: var(--radio);
+  padding: clamp(24px, 4vw, 40px);
+}
+
+.lista-espera {
+  display: grid;
+  gap: 10px;
+  padding-left: 1.2em;
+}
+
+.lista-espera li::marker {
+  color: var(--coral-oscuro);
+}
+
+/* Ayuda */
+.ayuda-grid {
+  align-items: start;
+  display: grid;
+  gap: clamp(32px, 5vw, 64px);
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+}
+
+.lista-ayuda {
+  display: grid;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.lista-ayuda details {
+  background: var(--blanco);
+  border: 1.5px solid var(--borde-control);
+  border-radius: var(--radio);
+}
+
+.lista-ayuda summary {
+  align-items: center;
+  border-radius: var(--radio);
+  cursor: pointer;
+  display: flex;
+  font-weight: 600;
+  gap: 12px;
+  justify-content: space-between;
+  list-style: none;
+  min-height: 60px;
+  padding: 14px 20px;
+}
+
+.lista-ayuda summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Indicador +/− dibujado con CSS (decorativo; el estado lo anuncia <details>) */
+.lista-ayuda summary::after {
+  color: var(--coral-oscuro);
+  content: "+";
+  flex: none;
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.lista-ayuda details[open] summary::after {
+  content: "−";
+}
+
+.lista-ayuda summary:hover {
+  background: var(--crema);
+}
+
+.respuesta-ayuda {
+  border-top: 1px solid var(--linea);
+  color: var(--texto-secundario);
+  padding: 16px 20px 20px;
+}
+
+.respuesta-ayuda p + p {
+  margin-top: 10px;
+}
+
+.respuesta-ayuda strong {
+  color: var(--azul);
+}
+
+.tarjeta-llamada {
+  background: var(--blanco);
+  border: 1px solid var(--linea);
+  border-radius: var(--radio-grande);
+  box-shadow: var(--sombra-suave);
+  display: grid;
+  gap: 14px;
+  padding: clamp(24px, 4vw, 36px);
+}
+
+.seccion-sesion .titulo-llamada {
+  font-size: 1.5rem;
+  margin-bottom: 0;
+}
+
+.boton-ancho {
+  min-height: 60px;
+  width: 100%;
+}
+
+/* Privacidad */
+.seccion-sesion .titulo-privacidad {
+  font-size: 1.5rem;
+  margin-bottom: 8px;
+}
+
+.bloque-privacidad p {
+  color: var(--texto-secundario);
+}
+
+/* Pie reducido */
+.footer-copy a {
+  color: var(--azul);
+  font-weight: 600;
+  text-underline-offset: 4px;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 900px) {
+  .lista-preparacion,
+  .ayuda-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .boton-consulta {
+    width: 100%;
+  }
+
+  .pasos-sesion li {
+    padding-left: 68px;
+  }
+
+  .pasos-sesion li::before {
+    height: 50px;
+    width: 50px;
+  }
+
+  .bloque-espera,
+  .bloque-privacidad {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}

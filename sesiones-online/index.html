@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Sesiones de logopedia online con Rebeca Ramos Carballo. Entra a tu consulta por videollamada desde casa con Google Meet."
+    />
+    <meta name="theme-color" content="#ffffff" />
+    <!-- Página de servicio para pacientes: no hace falta que la indexen los buscadores -->
+    <meta name="robots" content="noindex" />
+
+    <title>Sesiones online | Comer con Gusto</title>
+
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      />
+    </noscript>
+
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="sesiones.css" />
+  </head>
+
+  <body>
+    <a class="saltar-contenido" href="#contenido">Saltar al contenido</a>
+
+    <header class="cabecera-principal">
+      <div class="contenedor-navegacion">
+        <a href="../" class="marca" aria-label="Ir al inicio de Comer con Gusto">
+          <img
+            src="../images/web/logo-comer-con-gusto.png"
+            alt="Comer con Gusto"
+            class="logo-principal"
+            width="329"
+            height="106"
+          />
+        </a>
+
+        <button
+          class="boton-menu"
+          type="button"
+          aria-expanded="false"
+          aria-controls="menu-principal"
+        >
+          <span class="icono-menu" aria-hidden="true">
+            <span></span>
+          </span>
+          <span class="texto-boton-menu">Menú</span>
+        </button>
+
+        <nav id="menu-principal" class="navegacion" aria-label="Navegación principal">
+          <ul class="enlaces-navegacion">
+            <li><a href="../#sobre-mi">Sobre mí</a></li>
+            <li><a href="../#servicios">Servicios</a></li>
+            <li><a href="../#blog">Blog</a></li>
+            <li><a href="../#contacto">Contacto</a></li>
+            <li><a href="./" aria-current="page">Sesiones online</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="contenido" tabindex="-1">
+      <!-- ENTRADA A LA CONSULTA -->
+      <section class="portada-sesion" aria-labelledby="titulo-sesion">
+        <div class="contenedor contenido-sesion">
+          <p class="etiqueta-seccion">Sesiones online</p>
+          <h1 id="titulo-sesion">Tu sesión de logopedia online</h1>
+
+          <p class="texto-destacado">
+            Hablarás con Rebeca por videollamada, desde casa.
+            Usamos Google Meet, el programa de videollamadas de Google.
+          </p>
+
+          <!-- El contenido de este bloque lo completa sesiones.js según config.js -->
+          <div id="acceso-consulta" class="acceso-consulta">
+            <!-- Sin JavaScript, se ofrece el teléfono -->
+            <p class="aviso-sesion">
+              Para entrar a tu consulta online necesitas tener activado
+              JavaScript en el navegador. Si no puedes, llama a Rebeca al
+              <a href="tel:+34611959825">611 95 98 25</a>.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ANTES DE ENTRAR -->
+      <section class="seccion-sesion seccion-crema" aria-labelledby="titulo-antes">
+        <div class="contenedor">
+          <h2 id="titulo-antes">Antes de entrar</h2>
+
+          <ul class="lista-preparacion">
+            <li>
+              <span class="circulo-icono" aria-hidden="true">
+                <i class="fa-solid fa-mobile-screen"></i>
+              </span>
+              <div>
+                <h3>Un móvil, una tableta o un ordenador</h3>
+                <p>
+                  Que tenga cámara y esté conectado a internet. Si te
+                  acompaña un familiar, usad el mismo aparato.
+                </p>
+              </div>
+            </li>
+            <li>
+              <span class="circulo-icono" aria-hidden="true">
+                <i class="fa-solid fa-couch"></i>
+              </span>
+              <div>
+                <h3>Un sitio tranquilo y con luz</h3>
+                <p>Mejor con la luz delante de ti, no detrás.</p>
+              </div>
+            </li>
+            <li>
+              <span class="circulo-icono" aria-hidden="true">
+                <i class="fa-solid fa-plug"></i>
+              </span>
+              <div>
+                <h3>La batería cargada</h3>
+                <p>O el aparato enchufado durante la sesión.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- PASO A PASO -->
+      <section class="seccion-sesion seccion-blanca" aria-labelledby="titulo-pasos">
+        <div class="contenedor">
+          <h2 id="titulo-pasos">Qué pasará al pulsar el botón</h2>
+
+          <ol class="pasos-sesion">
+            <li>
+              <h3>Se abre Google Meet</h3>
+              <p>
+                En el móvil puede pedirte abrir o instalar la aplicación
+                Google Meet. Si no sabes hacerlo, llama a Rebeca.
+              </p>
+            </li>
+            <li>
+              <h3>Te pedirá permiso para la cámara y el micrófono</h3>
+              <p>
+                Pulsa <strong>«Permitir»</strong>. Si no lo haces, Rebeca
+                no podrá verte ni oírte.
+              </p>
+            </li>
+            <li>
+              <h3>Escribe tu nombre y pulsa «Solicitar unirse»</h3>
+              <p>
+                Así Rebeca sabe quién eres. Si te pide una cuenta de Google
+                y no tienes, no crees ninguna: llama a Rebeca.
+              </p>
+            </li>
+            <li>
+              <h3>Espera a que Rebeca te deje pasar</h3>
+              <p>
+                Cuando te acepte, empezará la videollamada.
+              </p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- MIENTRAS ESPERAS -->
+      <section class="seccion-sesion seccion-marfil" aria-labelledby="titulo-espera">
+        <div class="contenedor">
+          <div class="bloque-espera">
+            <span class="circulo-icono icono-espera" aria-hidden="true">
+              <i class="fa-solid fa-mug-hot"></i>
+            </span>
+            <div>
+              <h2 id="titulo-espera">Mientras esperas a Rebeca</h2>
+              <ul class="lista-espera">
+                <li>Es normal esperar unos minutos. Rebeca puede estar terminando otra sesión.</li>
+                <li>No cierres la página ni pulses «Atrás».</li>
+                <li>
+                  Si ves un aviso de que no has podido entrar, o pasan más de
+                  10 minutos, llama a Rebeca.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- AYUDA -->
+      <section id="ayuda" class="seccion-sesion seccion-crema" aria-labelledby="titulo-ayuda">
+        <div class="contenedor ayuda-grid">
+          <div>
+            <h2 id="titulo-ayuda">¿Tienes problemas para conectarte?</h2>
+            <p class="introduccion-seccion">
+              Pulsa sobre tu problema para ver la solución.
+            </p>
+
+            <div class="lista-ayuda">
+              <details>
+                <summary>Rebeca no me ve o no me oye</summary>
+                <div class="respuesta-ayuda">
+                  <p>
+                    Busca un dibujo de cámara o de candado junto a la
+                    dirección de la página, arriba. Púlsalo y elige
+                    <strong>«Permitir»</strong> para la cámara y el micrófono.
+                  </p>
+                  <p>Después, vuelve a cargar la página.</p>
+                </div>
+              </details>
+
+              <details>
+                <summary>La pantalla se queda en negro</summary>
+                <div class="respuesta-ayuda">
+                  <p>
+                    Cierra otros programas que usen la cámara, como WhatsApp
+                    o Zoom. Después, vuelve a cargar la página.
+                  </p>
+                </div>
+              </details>
+
+              <details>
+                <summary>La imagen se corta o va lenta</summary>
+                <div class="respuesta-ayuda">
+                  <p>
+                    Acércate al router de internet o usa el wifi de casa en
+                    lugar de los datos del móvil.
+                  </p>
+                </div>
+              </details>
+
+              <details>
+                <summary>Me pide una cuenta de Google</summary>
+                <div class="respuesta-ayuda">
+                  <p>
+                    Si tienes una cuenta de Google (por ejemplo, de Gmail),
+                    puedes usarla para entrar.
+                  </p>
+                  <p>
+                    Si no tienes, no crees ninguna. Llama a Rebeca y te
+                    ayudará a entrar.
+                  </p>
+                </div>
+              </details>
+
+              <details>
+                <summary>No me deja entrar</summary>
+                <div class="respuesta-ayuda">
+                  <p>
+                    Comprueba que es la hora de tu cita. Rebeca te dejará
+                    pasar en cuanto pueda. Si tarda más de 10 minutos,
+                    llámala.
+                  </p>
+                </div>
+              </details>
+
+              <details>
+                <summary>Me sale un aviso de navegador no compatible</summary>
+                <div class="respuesta-ayuda">
+                  <p>
+                    En el ordenador, usa Google Chrome, Microsoft Edge,
+                    Firefox o Safari. En el móvil o la tableta, usa la
+                    aplicación Google Meet o el navegador.
+                  </p>
+                  <p>Comprueba también que el navegador esté actualizado.</p>
+                </div>
+              </details>
+            </div>
+          </div>
+
+          <aside class="tarjeta-llamada" aria-labelledby="titulo-llamada">
+            <h2 id="titulo-llamada" class="titulo-llamada">¿Sigue sin funcionar?</h2>
+            <p>Llama a Rebeca y te ayudará.</p>
+            <a href="tel:+34611959825" class="boton-principal boton-ancho">
+              <i class="fa-solid fa-phone" aria-hidden="true"></i>
+              Llamar al 611 95 98 25
+            </a>
+            <a
+              href="https://wa.me/34611959825"
+              class="boton-secundario boton-ancho"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+              Escribir por WhatsApp<span class="solo-lectores"> (se abre en una pestaña nueva)</span>
+            </a>
+          </aside>
+        </div>
+      </section>
+
+      <!-- PRIVACIDAD -->
+      <section class="seccion-sesion seccion-blanca" aria-labelledby="titulo-privacidad">
+        <div class="contenedor">
+          <div class="bloque-privacidad">
+            <span class="circulo-icono" aria-hidden="true">
+              <i class="fa-solid fa-lock"></i>
+            </span>
+            <div>
+              <h2 id="titulo-privacidad" class="titulo-privacidad">Tu consulta es privada</h2>
+              <!-- PENDIENTE: confirmar con Rebeca estos compromisos y enlazar
+                   la política de privacidad cuando exista. -->
+              <p>
+                Rebeca atiende a cada paciente por separado y la sesión no
+                se graba.
+                Esta web no guarda tus datos cuando entras a la consulta.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="contenedor footer-copy">
+        <p>
+          © 2026 Comer con Gusto · Rebeca Ramos Carballo ·
+          <a href="../">Volver al inicio</a>
+        </p>
+      </div>
+    </footer>
+
+    <script src="../script.js"></script>
+    <script src="config.js"></script>
+    <script src="sesiones.js"></script>
+  </body>
+</html>

@@ -14,7 +14,7 @@ const cabecera = document.querySelector(".cabecera-principal");
 const botonMenu = document.querySelector(".boton-menu");
 const menuPrincipal = document.querySelector("#menu-principal");
 const textoBotonMenu = document.querySelector(".texto-boton-menu");
-const consultaMovil = window.matchMedia("(max-width: 1100px)");
+const consultaMovil = window.matchMedia("(max-width: 1200px)");
 
 function menuEstaAbierto() {
   return botonMenu?.getAttribute("aria-expanded") === "true";

@@ -1196,8 +1196,8 @@ strong {
    RESPONSIVE
    ===================================================== */
 
-/* Menú móvil a partir de 1100 px */
-@media (max-width: 1100px) {
+/* Menú móvil a partir de 1200 px */
+@media (max-width: 1200px) {
   .js .boton-menu {
     display: inline-flex;
   }

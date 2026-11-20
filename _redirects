@@ -1,0 +1,5 @@
+# Segunda barrera. La protección principal es que estas carpetas no se
+# publican (ver netlify.toml). Si por error se subieran, "404!" (forzado)
+# tiene prioridad sobre los archivos existentes.
+/docs-internos/*  /404  404!
+/.claude/*        /404  404!

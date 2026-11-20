@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "comer-con-gusto",
+      "runtimeExecutable": "node",
+      "runtimeArgs": [".claude/servidor-local.js", "8082"],
+      "port": 8082
+    }
+  ]
+}
