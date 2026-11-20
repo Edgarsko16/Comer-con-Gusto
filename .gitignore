@@ -1,2 +1,6 @@
 # Carpeta generada para el despliegue (ver netlify.toml)
 dist/
+
+# Documentación interna y configuración local de desarrollo: no se suben al repositorio
+docs-internos/
+.claude/
